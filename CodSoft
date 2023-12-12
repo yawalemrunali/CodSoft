@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class CodSoftTask2 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter marks obtained in each subject (out of 100):");
+        int subjects = 0;
+        int totalMarks = 0;
+        while (sc.hasNextInt()) {
+            int marks = sc.nextInt();
+            totalMarks = totalMarks + marks;
+            subjects++;
+        }
+        double averagePercentage = totalMarks / subjects;
+        char grade;
+        if (averagePercentage >= 80) {
+            grade = 'A';
+        } else if (averagePercentage >= 60 && averagePercentage <= 79) {
+            grade = 'B';
+        } else if (averagePercentage >= 40 && averagePercentage <= 59) {
+            grade = 'C';
+        } else {
+            grade = 'D';
+        }
+        System.out.println("Results:");
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Average Percentage: " + averagePercentage + "%");
+        System.out.println("Grade: " + grade);
+    }
+}
